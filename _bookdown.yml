@@ -1,6 +1,6 @@
 book_filename: "My_Bookdown_Template"
 chapter_name: "Chapter "
-repo: https://github.com/guang-yu-zhu/FirstBook
+repo: https://github.com/guang-yu-zhu/My_Bookdown_Template
 output_dir: docs
 rmd_files: [
   "index.Rmd",
