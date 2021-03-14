@@ -1,0 +1,54 @@
+{
+    "sources": [
+        {
+            "URL": "http://yihui.name/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "xie2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kingma",
+                    "given": "Diederik P"
+                },
+                {
+                    "family": "Welling",
+                    "given": "Max"
+                }
+            ],
+            "container-title": "arXiv preprint arXiv:1312.6114",
+            "id": "kingma2013auto",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "title": "Auto-encoding variational bayes",
+            "type": "article-journal"
+        }
+    ],
+    "project_biblios": [
+        "book.bib",
+        "article.bib"
+    ]
+}

@@ -1,0 +1,38 @@
+bookdown::gitbook:
+  css: style.css
+  split_by: chapter
+  split_bib: yes
+  config:
+    toc:
+      collapse: subsection
+      scroll_highlight: yes
+      before: |
+        <li><a href="./">My Bookdown Template</a></li>
+#      after: |
+#        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    toolbar:
+      position: fixed
+    edit : null
+    download: null
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: yes
+      github: no
+      twitter: yes
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+    info: yes  
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+bookdown::epub_book:
+  stylesheet: style.css

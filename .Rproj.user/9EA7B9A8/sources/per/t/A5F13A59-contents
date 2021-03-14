@@ -1,0 +1,13 @@
+book_filename: "My_Bookdown_Template"
+chapter_name: "Chapter "
+repo: https://github.com/guang-yu-zhu/FirstBook
+output_dir: docs
+rmd_files: [
+  "index.Rmd",
+  "01.Rmd",
+  "02.Rmd",
+  "03.Rmd",
+  'Appendix.Rmd'
+]
+clean: [packages.bib, bookdown.bbl]
+new_session: yes
