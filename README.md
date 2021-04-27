@@ -1,6 +1,4 @@
-This is the absolute minimum you need to start a [bookdown](https://bookdown.org/yihui/bookdown/) book. 
-You can find the
-preview of this book at https://guang-yu-zhu.github.io/FirstBook/
+- This is the my template to start a [bookdown](https://bookdown.org/yihui/bookdown/) book. 
+- Preview of this book at http://guangyuzhu.rbind.io/My_Bookdown_Template/
 
-All of the content of this repository is licensed 
-[CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+
