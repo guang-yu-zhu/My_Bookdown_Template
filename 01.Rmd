@@ -1,6 +1,42 @@
-# Chapter 1
+# Block
 
-This is the first real chapter.
+```{block2, type='note'}
+
+- a list item
+- another item
+
+More text.
+```
+
+
+```{block2,type='note'}
+> 长河落日圆
+
+
+```
+
+
+```{block2,type='puzzle'}
+**My puzzle goes in here! **
+```
+
+```{block2,type='rmdwarn'}
+这是警告
+- a list item
+- another item
+```
+
+```{block2,type='rmdtip'}
+__这是提示__
+```
+
+```{block2,type='rmdnote'}
+这是注意
+```
+
+```{block2,type='rmdinfo'}
+普通说明
+```
 
 
 

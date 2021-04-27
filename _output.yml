@@ -1,5 +1,7 @@
 bookdown::gitbook:
-  css: style.css
+#  includes:
+#    in_header: mathjax-local.html
+  css: [css/style.css,css/gzhu_book_style.css]
   split_by: chapter
   split_bib: yes
   config:
@@ -7,13 +9,13 @@ bookdown::gitbook:
       collapse: subsection
       scroll_highlight: yes
       before: |
-        <li><a href="./">My Bookdown Template</a></li>
+        <li><a href="./">My bookdown Template</a></li>
 #      after: |
 #        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     toolbar:
       position: fixed
     edit : null
-    download: null
+    download: no
     search: yes
     fontsettings:
       theme: white
@@ -31,8 +33,18 @@ bookdown::gitbook:
     info: yes  
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
+    in_header: latex/preamble.tex
+    before_body: latex/before_body.tex
+    after_body: latex/after_body.tex
+  keep_tex: yes
+  dev: "cairo_pdf"
   latex_engine: xelatex
   citation_package: natbib
+  template: latex/template.tex
+  pandoc_args: "--top-level-division=chapter"
+  toc_depth: 3
+  toc_unnumbered: no
+  toc_appendix: yes
+  quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
 bookdown::epub_book:
-  stylesheet: style.css
+  stylesheet: [css/style.css,css/gzhu_style.css]
