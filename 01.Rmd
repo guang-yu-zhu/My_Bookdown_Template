@@ -1,12 +1,18 @@
-# Block
+\mainmatter
 
+# Block {#chapter1}
+
+@blei2017variational
 
 ```{block2,type='rmdwarn'}
 这是警告
 
 - a list item
 - another item
+
 ```
+
+
 
 ```{block2,type='rmdtip'}
 __这是提示__
@@ -19,6 +25,7 @@ __这是提示__
 ```{block2,type='rmdinfo'}
 普通说明
 ```
+
 
 
 

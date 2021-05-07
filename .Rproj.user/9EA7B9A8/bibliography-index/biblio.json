@@ -45,6 +45,38 @@
             },
             "title": "Auto-encoding variational bayes",
             "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Blei",
+                    "given": "David M"
+                },
+                {
+                    "family": "Kucukelbir",
+                    "given": "Alp"
+                },
+                {
+                    "family": "McAuliffe",
+                    "given": "Jon D"
+                }
+            ],
+            "container-title": "Journal of the American statistical Association",
+            "id": "blei2017variational",
+            "issue": "518",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "859-877",
+            "publisher": "Taylor & Francis",
+            "title": "Variational inference: A review for statisticians",
+            "title-short": "Variational inference",
+            "type": "article-journal",
+            "volume": "112"
         }
     ],
     "project_biblios": [

@@ -69,35 +69,131 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\@ifpackageloaded{fancyvrb}{%
+  % https://github.com/CTeX-org/ctex-kit/issues/331
+  \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},formatcom=\xeCJKVerbAddon}%
+}{}
+\makeatother
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+
+%% The rest are from the preamble.tex of https://github.com/XiangyunHuang/ElegantBookdown
+
+\usepackage[export]{adjustbox} %Needed for max width
+%\patchcmd{<command>}{<code to replace>}{<code>}{<success>}{<failure>}
+%The following codes add max dimension option to includegraphics
+%Gin@ii is from graphicx package and looks for a second optional argument
+\expandafter\patchcmd\csname Gin@ii\endcsname 
+{\setkeys{Gin}{#1}}
+{\setkeys{Gin}{max width=\textwidth, max height=.5\textwidth,keepaspectratio,#1}}
+{}
+{}
+
+
+%%  Define rmdtip rmdwarn rmdinfo
+\usepackage{xcolor}
+\definecolor{colortip}{RGB}{81,183,73}
+\definecolor{colornote}{RGB}{251,188,5}
+\definecolor{colorwarn}{RGB}{255,83,59}
+\definecolor{colorinfo}{RGB}{204,204,204}
+
+\usepackage[most]{tcolorbox}
+\tcbset{
+	colbacktitle=white,
+	enhanced,
+	attach boxed title to top center={yshift=-2mm},
+	colback=white, % 背景色
+	coltext=black, % 文本色
+	leftrule=1mm,
+	rightrule=.25mm,
+	bottomrule=.25mm,
+	toprule=.25mm,
+	boxsep=1pt, % 文字和边框的空隙
+	arc=1pt % 圆角
+}
+
+\newtcolorbox{rmdtip}{
+	title=Tip,
+	coltitle=colortip,
+	colframe=colortip, % 边框色
+}
+
+\newtcolorbox{rmdnote}{
+	title=Note,
+	coltitle=colornote,
+	colframe=colornote % 边框色
+}
+
+\newtcolorbox{rmdwarn}{
+	title=Warning,
+	coltitle=colorwarn,
+	colframe=colorwarn % 边框色
+}
+
+\newtcolorbox{rmdinfo}{
+	colframe=colorinfo % 边框色
+}
+
+
+\frontmatter
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{My Bookdown Template}
 \author{}
-\date{\vspace{-2.5em}2021-04-27}
+\date{\vspace{-2.5em}2021-05-06}
 
 \begin{document}
 \maketitle
@@ -112,13 +208,23 @@
 
 This is the very first part of the book.
 
-\hypertarget{block}{%
-\chapter{Block}\label{block}}
+\mainmatter
+
+\hypertarget{chapter1}{%
+\chapter{Block}\label{chapter1}}
+
+\citet{blei2017variational}
 
 \begin{rmdwarn}
 这是警告
-- a list item
-- another item
+
+\begin{itemize}
+\tightlist
+\item
+  a list item
+\item
+  another item
+\end{itemize}
 \end{rmdwarn}
 
 \begin{rmdtip}
@@ -133,31 +239,13 @@ This is the very first part of the book.
 普通说明
 \end{rmdinfo}
 
-\textbf{References}
+\hypertarget{chapter2}{%
+\chapter{Chapter 2}\label{chapter2}}
 
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\end{CSLReferences}
-
-\hypertarget{chapter-2}{%
-\chapter{Chapter 2}\label{chapter-2}}
-
-\textbf{References}
-
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\end{CSLReferences}
+\citep{kingma2013auto}
 
 \hypertarget{chapter-3}{%
 \chapter{Chapter 3}\label{chapter-3}}
-
-\hypertarget{references}{%
-\section*{References}\label{references}}
-
-
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\end{CSLReferences}
 
 \cleardoublepage
 
@@ -166,5 +254,8 @@ This is the very first part of the book.
 
 
   \bibliography{book.bib,article.bib}
+
+\backmatter
+\printindex
 
 \end{document}
