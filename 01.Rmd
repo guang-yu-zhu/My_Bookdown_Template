@@ -1,27 +1,9 @@
 # Block
 
-```{block2, type='note'}
-
-- a list item
-- another item
-
-More text.
-```
-
-
-```{block2,type='note'}
-> 长河落日圆
-
-
-```
-
-
-```{block2,type='puzzle'}
-**My puzzle goes in here! **
-```
 
 ```{block2,type='rmdwarn'}
 这是警告
+
 - a list item
 - another item
 ```
@@ -41,7 +23,3 @@ __这是提示__
 
 
 
-
-**References** 
-
-<div id="refs"></div>
