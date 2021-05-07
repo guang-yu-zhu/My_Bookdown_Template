@@ -145,6 +145,8 @@
 \definecolor{colornote}{RGB}{251,188,5}
 \definecolor{colorwarn}{RGB}{255,83,59}
 \definecolor{colorinfo}{RGB}{204,204,204}
+\definecolor{colortodo}{RGB}{66,133,244}
+
 
 \usepackage[most]{tcolorbox}
 \tcbset{
@@ -184,6 +186,11 @@
 }
 
 
+\newtcolorbox{rmdtodo}{
+	title=Todo,
+	coltitle=colortodo ,
+	colframe=colortodo  % 边框色	
+}
 \frontmatter
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
@@ -214,6 +221,19 @@ This is the very first part of the book.
 \chapter{Block}\label{chapter1}}
 
 \citet{blei2017variational}
+
+\begin{rmdtodo}
+rmdtodo
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Start
+\item
+  Analyse
+\end{enumerate}
+\end{rmdtodo}
 
 \begin{rmdwarn}
 这是警告

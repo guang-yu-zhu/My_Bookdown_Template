@@ -4,6 +4,16 @@
 
 @blei2017variational
 
+```{block2,type='rmdtodo'}
+rmdtodo
+
+1. Start
+1. Analyse
+
+```
+
+
+
 ```{block2,type='rmdwarn'}
 这是警告
 
